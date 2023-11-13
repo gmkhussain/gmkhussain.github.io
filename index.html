@@ -35,7 +35,26 @@
       <script src="http://gmkhussain.github.io/frontend/js/html5shiv.min.js"></script>
       <script src="http://gmkhussain.github.io/frontend/js/respond.min.js"></script>
     <![endif]-->
-	
+	 <meta property="og:title" content="gmkhussain"/>
+    <meta property="og:type" content="gmkhussain"/>
+    <meta property="og:url" content="http://gmkhussain.github.io"/>
+    <meta property="og:image" id="ogImage" content="AA"/>
+    <meta property="og:site_name" content="IMDb"/>
+    <meta property="fb:admins" content="USER_ID"/>
+    <meta property="og:description"
+          content="A group of U.S. Marines, under command of
+                   a renegade general, take over Alcatraz and
+                   threaten San Francisco Bay with biological
+                   weapons."/> 
+<script>
+      const fetchOgImage = async (url = "", data = {}) => { 
+              // const response = await fetch(url)
+        const ogImage = document.getElementById('ogImage')    
+          url = "https://i.ytimg.com/vi/gQTn9lxBCHg/maxresdefault.jpg" 
+          document.getElementById("ogImage").setAttribute("content", url); 
+  }
+fetchOgImage()
+</script>
 	
   </head>
   <body>
