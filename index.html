@@ -4,74 +4,31 @@
     <meta charset="UTF-8">
     <title>GMK Hussain</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-	<link rel="icon" type="image/png" href="images/favicon.png">
-	
-    <!-- Bootstrap --><link href="http://gmkhussain.github.io/frontend/css/bootstrap.min.css" rel="stylesheet">
-	
-	<link rel="stylesheet" href="http://gmkhussain.github.io/frontend/css/stylized.css">
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="http://gmkhussain.github.io/frontend/css/colorized.css">
-	<link rel="stylesheet" href="http://gmkhussain.github.io/frontend/css/animate.css">
-	<link rel="stylesheet" href="http://gmkhussain.github.io/frontend/css/slidenav.css">
-	<link rel="stylesheet" href="http://gmkhussain.github.io/frontend/css/font-awesome.min.css">
-	
-	<!-- jQuery -->
-	<!--[if (!IE)|(gt IE 8)]><!-->
-	  <script src="http://gmkhussain.github.io/frontend/js/jquery-2.2.4.min.js"></script>
-	<!--<![endif]-->
-
-
-	<!--[if lte IE 8]>
-	  <script src="http://gmkhussain.github.io/frontend/js/jquery1.9.1.min.js"></script>
-	<![endif]-->
-	
-	<!--browser selector-->
-	<script src="http://gmkhussain.github.io/frontend/js/css_browser_selector.js" type="text/javascript"></script>
-	
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="http://gmkhussain.github.io/frontend/js/html5shiv.min.js"></script>
-      <script src="http://gmkhussain.github.io/frontend/js/respond.min.js"></script>
-    <![endif]-->
-	 <meta property="og:title" content="gmkhussain"/>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta property="og:title" content="gmkhussain"/>
     <meta property="og:type" content="gmkhussain"/>
     <meta property="og:url" content="http://gmkhussain.github.io"/>
-    <meta property="og:image" id="ogImage" content="AA"/>
+    <meta property="og:image" id="ogImage" content="n/a"/>
     <meta property="og:site_name" content="IMDb"/>
     <meta property="fb:admins" content="USER_ID"/>
-    <meta property="og:description"
-          content="A group of U.S. Marines, under command of
-                   a renegade general, take over Alcatraz and
-                   threaten San Francisco Bay with biological
-                   weapons."/> 
+    <meta property="og:description" content="A group of U.S. Marines, under command of a renegade general, take over Alcatraz and threaten San Francisco Bay with biological weapons."/> 
 <script>
       const fetchOgImage = async (url = "", data = {}) => { 
               // const response = await fetch(url)
         const ogImage = document.getElementById('ogImage')    
           url = "https://i.ytimg.com/vi/gQTn9lxBCHg/maxresdefault.jpg" 
           document.getElementById("ogImage").setAttribute("content", url); 
+          document.getElementById("image").setAttribute("src", url);  
+          document.getElementById("status").innerHTML = "Loaded"; 
   }
 fetchOgImage()
 </script>
 	
   </head>
   <body>
-   
-	<iframe src="https://gmkhussain.linkst.ar/" style="height: 99vh; width: 100vw"></iframe>
-
-	<!--Bootstrap-->
-    <script src="http://gmkhussain.github.io/frontend/js/bootstrap.min.js"></script>
-	<!--./Bootstrap-->
-	
-	<!--Major Scripts-->
-	<script src="http://gmkhussain.github.io/frontend/js/viewportchecker.js"></script>
-    <script src="http://gmkhussain.github.io/frontend/js/kodeized.js"></script>
-	<script src="http://gmkhussain.github.io/frontend/js/customized.js"></script>
-	<!--./Major Scripts-->
-	
-	
+	  
+	<div id="image"></div>
+	<div id="status"></div>	
   
   </body>
 </html>
