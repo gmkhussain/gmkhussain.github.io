@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { Youtube, Instagram, Github, ExternalLink } from "lucide-react";
-import { useDriveJSON } from "@/hooks/useDriveJSON";
-
 
 const reelItems = [
   { id: 1, title: "React Hooks Deep Dive", color: "from-violet-500 to-purple-600", link: "https://youtube.com" },
@@ -50,15 +48,11 @@ const ScrollColumn = ({ items, speed, offset = 0 }: { items: typeof reelItems; s
   );
 };
 
-const Hero = () => {
-
-  const { data, loading, error } = useDriveJSON();
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
-  console.log(data);
+const Hero = ({data}  : {data: {}}) => {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
+      
       {/* Background glow effect */}
       <div className="absolute inset-0 bg-gradient-hero" />
       
@@ -90,7 +84,7 @@ const Hero = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
               </span>
-              <span className="text-sm text-muted-foreground">Available for new projects</span>
+              <span className="text-sm text-muted-foreground">{data?.about?.headline}</span>
             </motion.div>
 
             {/* Main heading */}
@@ -100,9 +94,8 @@ const Hero = () => {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
             >
-              {data?.hero?.title_line1}
-              <span className="block text-foreground">Frontend</span>
-              <span className="block text-gradient">Engineer</span>
+              <span className="block text-foreground">{data?.about?.title_1}</span>
+              <span className="block text-gradient">{data?.about?.title_2}</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -112,11 +105,10 @@ const Hero = () => {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8"
             >
-              8+ years crafting exceptional UI experiences for web & mobile apps.
+              {data?.about?.content_1}
               <br />
-              <span className="text-foreground">React.js enthusiast</span> sharing knowledge through tutorials.
+              <span className="text-foreground">{data?.about?.content_2}</span> {data?.about?.content_3}
             </motion.p>
-
 
 <motion.div
   initial={{ opacity: 0, y: 20 }}
@@ -126,7 +118,7 @@ const Hero = () => {
 >
   {/* YouTube */}
   <a
-    href="#"
+    href={data?.link?.youtube}
     target="_blank"
     rel="noopener noreferrer"
     className="flex items-center justify-center gap-2
@@ -141,7 +133,7 @@ const Hero = () => {
 
   {/* Instagram */}
   <a
-    href="#"
+    href={data?.link?.instagram}
     target="_blank"
     rel="noopener noreferrer"
     className="flex items-center justify-center gap-2
@@ -156,7 +148,7 @@ const Hero = () => {
 
   {/* GitHub */}
   <a
-    href="#"
+    href={data?.link?.github}
     target="_blank"
     rel="noopener noreferrer"
     className="flex items-center justify-center
