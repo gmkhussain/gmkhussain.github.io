@@ -10,7 +10,7 @@ export function useDriveJSON() {
   const VITE_STAGE = import.meta.env.VITE_STAGE === "true";
 
   useEffect(() => {
-    const localURL = "http://localhost:8080/content/en.json";
+    const localURL = "/content/en.json";
     const driveFileId = "1uM4QHpSuCrimWaIdA4BuLu-VwYmflA5T";
     const driveURL = `https://drive.google.com/uc?export=download&id=${driveFileId}`;
 
