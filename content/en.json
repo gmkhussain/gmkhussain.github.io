@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "title_line1": "Hi, I am",
+    "title_line2": "Frontend Engineer"
+  },
+  "socials": [
+    { "name": "YouTube", "url": "https://youtube.com", "type": "youtube" },
+    { "name": "Instagram", "url": "https://instagram.com", "type": "instagram" },
+    { "name": "GitHub", "url": "https://github.com", "type": "github" }
+  ],
+  "stats": [
+    { "value": "8+", "label": "Years Experience" },
+    { "value": "50+", "label": "Projects Delivered" },
+    { "value": "10K+", "label": "Tutorial Views" },
+    { "value": "5M+", "label": "StackOverflow People Reached" }
+  ],
+  "reels": [
+    { "id": 1, "title": "React Hooks Deep Dive", "color": "from-violet-500 to-purple-600", "link": "https://youtube.com" },
+    { "id": 2, "title": "CSS Grid Mastery", "color": "from-pink-500 to-rose-600", "link": "https://instagram.com" },
+    { "id": 3, "title": "TypeScript Tips", "color": "from-cyan-500 to-blue-600", "link": "https://youtube.com" },
+    { "id": 4, "title": "Framer Motion", "color": "from-orange-500 to-red-600", "link": "https://instagram.com" },
+    { "id": 5, "title": "Tailwind Tricks", "color": "from-emerald-500 to-teal-600", "link": "https://youtube.com" },
+    { "id": 6, "title": "Next.js 14", "color": "from-indigo-500 to-violet-600", "link": "https://instagram.com" }
+  ]
+}

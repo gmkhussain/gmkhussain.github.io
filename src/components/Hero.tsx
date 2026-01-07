@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Youtube, Instagram, Github, ExternalLink } from "lucide-react";
+import { useDriveJSON } from "@/hooks/useDriveJSON";
+
 
 const reelItems = [
   { id: 1, title: "React Hooks Deep Dive", color: "from-violet-500 to-purple-600", link: "https://youtube.com" },
@@ -49,6 +51,12 @@ const ScrollColumn = ({ items, speed, offset = 0 }: { items: typeof reelItems; s
 };
 
 const Hero = () => {
+
+  const { data, loading, error } = useDriveJSON();
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+  console.log(data);
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background glow effect */}
@@ -92,6 +100,7 @@ const Hero = () => {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
             >
+              {data?.hero?.title_line1}
               <span className="block text-foreground">Frontend</span>
               <span className="block text-gradient">Engineer</span>
             </motion.h1>
@@ -182,12 +191,14 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
+
+
           {/* Right side - Infinite scrolling reels */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-            className="hidden0 lg:flex items-center justify-center gap-4 h-[600px] overflow-hidden0 relative"
+            className="hidden lg:flex items-center justify-center gap-4 h-[600px] overflow-hidden0 relative"
           >
             {/* Gradient overlays for smooth fade */}
             {/* <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none" />
