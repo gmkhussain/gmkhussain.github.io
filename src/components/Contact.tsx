@@ -29,7 +29,7 @@ const Contact = () => {
           </p>
 
           <motion.a
-            href="mailto:hello@example.com"
+            href="mailto:gmk.hussain+website@gmail.com"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-lg transition-all hover:glow-strong"
@@ -48,7 +48,7 @@ const Contact = () => {
           className="mt-24 pt-8 border-t border-border"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <p>© 2025 Frontend Engineer. Built with React & ❤️</p>
+            <p>© 2026 GMK Hussain</p>
             <div className="flex items-center gap-6">
               <a href="#" className="hover:text-primary transition-colors">YouTube</a>
               <a href="#" className="hover:text-primary transition-colors">Instagram</a>
