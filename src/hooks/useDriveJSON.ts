@@ -14,7 +14,7 @@ export function useDriveJSON() {
     const driveFileId = "1uM4QHpSuCrimWaIdA4BuLu-VwYmflA5T";
     const driveURL = `https://drive.google.com/uc?export=download&id=${driveFileId}`;
 
-    const url = VITE_STAGE ? localURL : driveURL;
+    const url = VITE_STAGE ? localURL : localURL;
 
     fetch(url)
       .then((res) => {
