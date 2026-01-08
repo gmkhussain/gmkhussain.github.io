@@ -2,23 +2,40 @@ import { motion } from "framer-motion";
 import { Youtube, Instagram, Github, ExternalLink } from "lucide-react";
 
 const reelItems = [
-  { id: 1, title: "React Hooks Deep Dive", color: "from-violet-500 to-purple-600", link: "https://youtube.com" },
-  { id: 2, title: "CSS Grid Mastery", color: "from-pink-500 to-rose-600", link: "https://instagram.com" },
-  { id: 3, title: "TypeScript Tips", color: "from-cyan-500 to-blue-600", link: "https://youtube.com" },
-  { id: 4, title: "Framer Motion", color: "from-orange-500 to-red-600", link: "https://instagram.com" },
-  { id: 5, title: "Tailwind Tricks", color: "from-emerald-500 to-teal-600", link: "https://youtube.com" },
-  { id: 6, title: "Next.js 14", color: "from-indigo-500 to-violet-600", link: "https://instagram.com" },
-  { id: 7, title: "State Management", color: "from-amber-500 to-orange-600", link: "https://youtube.com" },
-  { id: 8, title: "API Integration", color: "from-rose-500 to-pink-600", link: "https://instagram.com" },
+  {
+    id: 1,
+    // title: "React Hooks Deep Dive",
+    // "image_url": "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/1a806620653111.54fa1dd299812.jpg",
+    link: "https://youtube.com",
+  },
+  {
+    id: 2,
+    title: "CSS Grid Mastery",
+    image_url: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/1a806620653111.54fa1dd299812.jpg",
+    link: "https://instagram.com",
+  },
 ];
 
-const ScrollColumn = ({ items, speed, offset = 0 }: { items: typeof reelItems; speed: number; offset?: number }) => {
+const CARD_WIDTH = 180;
+const CARD_HEIGHT = 280;
+const GAP = 20;
+
+const ScrollColumn = ({
+  items,
+  speed,
+  offset = 0,
+}: {
+  items: typeof reelItems;
+  speed: number;
+  offset?: number;
+}) => {
   const duplicatedItems = [...items, ...items, ...items];
-  
+  const scrollDistance = items.length * (CARD_HEIGHT + GAP);
+
   return (
     <motion.div
-      className="flex flex-col gap-4"
-      animate={{ y: [offset, offset - (items.length * 220)] }}
+      className="flex flex-col gap-5"
+      animate={{ y: [offset, offset - scrollDistance] }}
       transition={{
         y: {
           repeat: Infinity,
@@ -30,23 +47,37 @@ const ScrollColumn = ({ items, speed, offset = 0 }: { items: typeof reelItems; s
     >
       {duplicatedItems.map((item, index) => (
         <a
-          key={`${item.id}-${index}`}
-          href={item.link}
+          key={`${item?.id}-${index}`}
+          href={item?.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative w-32 h-52 rounded-2xl overflow-hidden cursor-pointer flex-shrink-0 transition-transform hover:scale-105"
+          className="group relative flex-shrink-0 rounded-3xl overflow-hidden
+                     cursor-pointer transition-transform hover:scale-105"
+          style={{ width: CARD_WIDTH, height: CARD_HEIGHT }}
         >
-          <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-90`} />
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-3 text-center">
-            <span className="text-white text-xs font-medium leading-tight">{item.title}</span>
-            <ExternalLink className="w-4 h-4 text-white/70 mt-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-          </div>
+          {/* Image */}
+          { item?.image_url && <img
+            src={item?.image_url}
+            alt={item?.title}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          /> }
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors" />
+
+          {/* Title */}
+          { item?.title && <div className="absolute inset-0 flex items-end p-4">
+            <span className="text-white text-sm font-semibold leading-tight">
+              {item?.title}
+            </span>
+          </div> }
         </a>
       ))}
     </motion.div>
   );
 };
+
 
 const Hero = ({data}  : {data: {}}) => {
 
@@ -196,9 +227,11 @@ const Hero = ({data}  : {data: {}}) => {
             {/* <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none" />
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" /> */}
             
-            <ScrollColumn items={reelItems} speed={25} offset={0} />
-            <ScrollColumn items={[...reelItems].reverse()} speed={30} offset={-100} />
-            <ScrollColumn items={reelItems.slice(2).concat(reelItems.slice(0, 2))} speed={22} offset={-50} />
+            { data?.cards && (<>
+             <ScrollColumn items={data?.cards} speed={40} offset={0} /> 
+            <ScrollColumn items={[...data?.cards].reverse()} speed={50} offset={-100} />
+            <ScrollColumn items={data?.cards.slice(2).concat(data?.cards?.slice(0, 2))} speed={30} offset={-50} />
+          </>) }
           </motion.div>
         </div>
       </div>
