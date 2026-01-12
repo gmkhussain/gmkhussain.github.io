@@ -22,8 +22,9 @@ const TechStack = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Tech <span className="text-gradient">Stack</span>
+          <h2 className="text-3xl md:text-5xl mb-4">
+            <span className="font-bold">Tech</span> {" "}
+            <span className="text-gradient italic font2">Stack</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
             The tools I use daily to build exceptional user experiences

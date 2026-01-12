@@ -17,10 +17,10 @@ const Contact = () => {
             <span className="text-sm text-muted-foreground">Get in touch</span>
           </div>
 
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            Let's work
+          <h2 className="text-4xl md:text-6xl lg:text-7xl mb-6">
+            <span className="font-bold">Let's work</span>
             <br />
-            <span className="text-gradient">together</span>
+            <span className="text-gradient italic font2">together</span>
           </h2>
 
           <p className="text-muted-foreground text-lg mb-12 max-w-lg mx-auto">

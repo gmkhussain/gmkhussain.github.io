@@ -36,10 +36,9 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Crafting Digital
-              <br />
-              <span className="text-gradient">Experiences</span>
+            <h2 className="text-3xl md:text-5xl mb-6">
+              <span className="font-bold">Crafting Digital</span> {" "}
+              <span className="text-gradient italic font2">Experiences</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
               With over 8 years of experience in frontend development, I specialize 

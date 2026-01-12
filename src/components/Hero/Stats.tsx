@@ -102,7 +102,7 @@ const Stats = ({data}  : {data: {}}) => {
     { end: 5400000, suffix: "+", label: "StackOverflow Reached" },
   ].map((stat, index) => (
     <div key={index} className="text-center">
-      <div className="text-[2xl] md:text-5xl font-bold text-gradient">
+      <div className="text-[2xl] md:text-5xl font-bold text-gradient font2">
         <CountUp end={stat.end} suffix={stat.suffix} />
       </div>
       <div className="text-sm text-muted-foreground">

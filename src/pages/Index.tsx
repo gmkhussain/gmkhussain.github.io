@@ -1,7 +1,10 @@
 import Hero from "@/components/Hero/Hero";
 import TechStack from "@/components/TechStack";
 import About from "@/components/About";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
+// import ChatAgent from "@/components/ChatAgent"
+// import JobExperience from "@/components/Job/JobExperience";
 import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabase'
 
@@ -31,7 +34,10 @@ const Index = () => {
 
   return (
     <main className="min-h-screen bg-background overflow-x-hidden">
-    <Hero data={data} />
+      <Hero data={data} />
+      {/* <JobExperience /> */}
+      {/* <ChatAgent /> */}
+      <Testimonials />
       <TechStack />
       <About />
       <Contact />

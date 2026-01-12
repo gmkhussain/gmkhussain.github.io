@@ -21,7 +21,7 @@ const Hero = ({data}  : {data: {}}) => {
         }} />
       </div>
 
-      <div className="container relative z-10 px-6">
+      <div className="container relative z-10 px-2 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <motion.div
@@ -48,13 +48,13 @@ const Hero = ({data}  : {data: {}}) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6"
             >
-          <span className="block text-foreground drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] sm:drop-shadow-none">
+          <span className="block font-bold text-foreground drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] sm:drop-shadow-none">
             {data?.about?.title_1}
           </span>
 
-          <span className="block text-gradient drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)] sm:drop-shadow-none">
+          <span className="block text-gradient drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)] sm:drop-shadow-none italic font2">
             {data?.about?.title_2}
           </span>
 

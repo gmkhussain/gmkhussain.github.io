@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Paytone+One&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -69,7 +70,11 @@
     background: hsl(185 100% 50% / 0.3);
     color: hsl(210 40% 98%);
   }
+  .font2 {
+    font-family: 'Instrument Serif', system-ui, sans-serif;
+  }
 }
+
 
 @layer utilities {
   .text-gradient {
